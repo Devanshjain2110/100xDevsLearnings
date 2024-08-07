@@ -20,6 +20,10 @@ app.post('/user', function(req, res) {
 
 app.get('/requestCount', function(req, res) {
   res.status(200).json({ requestCount });
-});
+}); 
+
+app.use((req,res,next) => {
+  requestCount++
+})
 
 module.exports = app;
